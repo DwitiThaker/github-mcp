@@ -1,6 +1,6 @@
 streamlit
 agno
 mcp
-google-generativeai
+google-genai
 python-dotenv
 aiohttp>=3.10.11
