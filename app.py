@@ -66,7 +66,8 @@ col1, col2 = st.columns([3, 1])
 with col1:
     repo = st.text_input(
         "Repository",
-        value="Shubhamsaboo/awesome-llm-apps",
+        value="",  
+        placeholder="owner/repo",
         help="Format: owner/repo"
     )
 
