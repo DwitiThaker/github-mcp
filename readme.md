@@ -73,7 +73,6 @@ This project demonstrates a "Hybrid Runtime" architecture:
 
 ## 🚀 How to Use
 
-![How to use the app instructions](YOUR_IMAGE_URL_HERE)
 
 1. **Authentication**: Enter your GitHub Token.
 2. **Target**: Specify the repository URL (e.g., `https://github.com/owner/repo`).
