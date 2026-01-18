@@ -1,4 +1,5 @@
 import asyncio
+import sys
 import os
 import streamlit as st
 from textwrap import dedent
@@ -101,12 +102,18 @@ model = Gemini(
 async def run_github_agent(message: str) -> str:
     if not os.getenv("GITHUB_TOKEN"):
         return "❌ Error: GitHub token not provided"
+    
+    if sys.platform == "win32":
+        command = "cmd.exe"
+        args = ["/c", "npx", "-y", "@modelcontextprotocol/server-github"]
+    else:
+        command = "npx"
+        args = ["-y", "@modelcontextprotocol/server-github"]
 
     try:
-        # Windows-safe npx execution
         server_params = StdioServerParameters(
-            command="cmd.exe",
-            args=["/c", "npx", "-y", "@modelcontextprotocol/server-github"]
+            command=command,
+            args=args
         )
 
         async with stdio_client(server_params) as (read, write):
