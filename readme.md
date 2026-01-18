@@ -2,6 +2,12 @@
 
 A powerful AI-powered GitHub explorer built with **Streamlit**, **Agno**, and the **Model Context Protocol (MCP)**. This application allows you to chat with any GitHub repository using natural language to uncover bugs, analyze pull requests, and track development activity.
 
+<div align="center">
+  <img width="100%" alt="GitHub MCP Agent Interface - Main Dashboard" src="https://github.com/user-attachments/assets/bb146f9f-6b75-42a6-972a-20ccdb1eecc5" />
+  <br>
+  <em>Chat with your codebase: Ask questions and get real-time insights.</em>
+</div>
+
 ---
 
 ## 📖 About the Project
@@ -18,9 +24,17 @@ This is not just a GitHub search tool; it is an **AI Agent** that understands th
 1. **User Input:** You ask a question in the Streamlit UI.
 2. **Agentic Reasoning:** The **Agno** framework sends your query to **Google Gemini 1.5 Flash**. The LLM decides *which* data it needs to answer you.
 3. **Tool Execution (MCP):**
-    * Instead of writing custom API wrappers, the Python app connects to a standardized **MCP Server** (running locally via Node.js).
-    * This server securely handles the GitHub API communication.
+   * Instead of writing custom API wrappers, the Python app connects to a standardized **MCP Server** (running locally via Node.js).
+   * This server securely handles the GitHub API communication.
 4. **Synthesis:** The raw data (JSON) is sent back to Gemini, which interprets the technical details and generates a clear, Markdown-formatted answer.
+
+<div align="center">
+  <img width="100%" alt="Detailed Analysis Results" src="https://github.com/user-attachments/assets/5056f09d-f7c0-48d4-b1be-91a872a2be64" />
+  <br><br>
+  <img width="80%" alt="Features Breakdown" src="https://github.com/user-attachments/assets/b18b4bc6-5da0-4847-8394-aa182dca39c3" />
+  <br>
+  <em>The agent analyzes code, issues, and PRs to provide structured, synthesized answers.</em>
+</div>
 
 ---
 
@@ -39,9 +53,9 @@ This project demonstrates a "Hybrid Runtime" architecture:
 
 * **Natural Language Queries**: Ask questions like *"Show me the most recent bugs"* instead of manually filtering issues.
 * **Deep Repository Analysis**:
-    * **Issues**: Filter by labels, status, or content.
-    * **Pull Requests**: Find PRs needing review or recently merged code.
-    * **Activity**: Summarize commit trends and contributor health.
+   * **Issues**: Filter by labels, status, or content.
+   * **Pull Requests**: Find PRs needing review or recently merged code.
+   * **Activity**: Summarize commit trends and contributor health.
 * **Secure**: Your GitHub Token is used only for the session and is not stored persistently.
 * **Cross-Platform**: Works on Windows, macOS, and Linux (Streamlit Cloud ready).
 
@@ -57,6 +71,17 @@ This project demonstrates a "Hybrid Runtime" architecture:
 
 ---
 
-📄 License
-----------
+## 🚀 How to Use
+
+![How to use the app instructions](YOUR_IMAGE_URL_HERE)
+
+1. **Authentication**: Enter your GitHub Token.
+2. **Target**: Specify the repository URL (e.g., `https://github.com/owner/repo`).
+3. **Query**: Select a template or type your own custom question.
+4. **Run**: Click "Run Query" to get your insights.
+
+---
+
+## 📄 License
+
 MIT License.
